@@ -42,6 +42,22 @@ export default {
             .catch( apiError => console.log(apiError)) //=> Catch error
         },
 
+        // [AUTH] Method to log user with credentials
+        registerUser(context, data){
+            //=> Fetch API
+            fetch( `${apiUrlAuth}register`, {
+                method: `POST`,
+                body: JSON.stringify({ givenName: data.givenName, familyName: data.familyName, email: data.email, password: data.password }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: `include`
+            })
+            .then( response => !response.ok ? console.log(response) : response.json(response)) //=> Check response
+            .then( async apiResponse => await context.commit(`USER`, { data: apiResponse.data })) //=> Commit changes
+            .catch( apiError => console.log(apiError)) //=> Catch error
+        },
+
         //[AUTH] Method to logout user
         logoutUser(context){
             fetch( `${apiUrlAuth}logout`, {  method: `GET` }) //=> Fetch API

@@ -1,10 +1,10 @@
 <template>
-  <header class="flexBox flexColumn">
-      <nav class="flexBox flexCenter">
-          <h1>VueJS Boilerplate by <a href="https://dwsapp.io" target="_blank">dwsapp.io</a> <span v-if="subTitle">{{subTitle}}</span></h1>
-
-          <router-link to="/" class="button"><i class="fas fa-list"></i></router-link>
-          <button v-if="isAuth" type="button" class="button" v-on:click="logoutUser"><i class="fas fa-sign-out-alt"></i></button>
+  <header class="container">
+      <nav class="row">
+          <div class="col-12">
+            <router-link to="/" class="button"><i class="fas fa-list"></i></router-link>
+            <button v-if="isAuth" type="button" class="button" v-on:click="logoutUser"><i class="fas fa-sign-out-alt"></i></button>
+          </div>
       </nav>
   </header>
 </template>
@@ -41,10 +41,6 @@
                         this.subTitle = `Page login : public`
                     break;
 
-                    case 'Post':
-                        this.subTitle = `Page Article : public`
-                    break;
-
                     default:
                         this.subTitle = undefined
                     break;
@@ -68,3 +64,6 @@
         mounted(){ }
     }
 </script>
+
+<style lang="scss">
+</style>

@@ -1,18 +1,29 @@
 <template>
-  <main>
-    <OrganizationCard
-      class="organization-item col-6 col-lg-4"
-      v-for="organization in allOrganization"
-      :key="organization._id"
-      :organization="organization"
-    />
-    <CategoryCard
-      class="category-item col-6 col-lg-4"
-      v-for="category in allCategory"
-      :key="category._id"
-      :category="category"
-    />
-  </main>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="organization-title general-title col-12">
+          <h2>Les boutiques</h2>
+        </div>
+        <OrganizationCard
+          class="organization-item col-12"
+          v-for="organization in allOrganization"
+          :key="organization._id"
+          :organization="organization"
+        />
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+          <CategoryCard
+            class="category-item col-12"
+            v-for="category in allCategory"
+            :key="category._id"
+            :category="category"
+          />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

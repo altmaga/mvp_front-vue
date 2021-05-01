@@ -1,7 +1,7 @@
 <template>
-  <main class="flexBox flexColumn">
+  <div>
     <h2 class="notFoundTitle">404 page not found</h2>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -13,7 +13,7 @@
       return {}
     },
     methods:{},
-    
+
     created(){},
     mounted(){},
     destroyed(){}

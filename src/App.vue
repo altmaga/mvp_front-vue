@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <HeaderApp/>
-    
+    <!-- <HeaderApp/> -->
+
     <main>
       <router-view :key="$route.fullPath"></router-view>
     </main>
 
-    <FooterApp/>
+    <!-- <FooterApp/> -->
   </div>
 </template>
 
@@ -17,8 +17,8 @@
   export default {
     name: 'App',
     components: {
-      HeaderApp,
-      FooterApp
+      // HeaderApp,
+      // FooterApp
     },
     data(){
       return{}

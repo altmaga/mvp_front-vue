@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <section>
     <FormLogin />
-  </main>
+  </section>
 </template>
 
 <script>
