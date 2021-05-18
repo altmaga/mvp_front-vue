@@ -2,25 +2,27 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="organization-title general-title col-12">
-          <h2>Les boutiques</h2>
+        <div class="category-title general-title col-12">
+          <h2>Les catégories</h2>
         </div>
-        <OrganizationCard
-          class="organization-item col-12"
-          v-for="organization in allOrganization"
-          :key="organization._id"
-          :organization="organization"
-        />
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
           <CategoryCard
             class="category-item col-12"
             v-for="category in allCategory"
             :key="category._id"
             :category="category"
           />
+      </div>
+      <div class="row">
+        <div class="organization-title general-title col-12">
+          <h2>Les boutiques</h2>
+        </div>
+        <div class="col-12">
+          <OrganizationCard
+            v-for="organization in allOrganization"
+            :key="organization._id"
+            :organization="organization"
+          />
+        </div>
       </div>
     </div>
   </section>

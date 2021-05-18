@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <HeaderApp/> -->
+    <HeaderApp/>
 
     <main>
       <router-view :key="$route.fullPath"></router-view>
@@ -12,13 +12,11 @@
 
 <script>
   import HeaderApp from './statics/HeaderApp'
-  import FooterApp from './statics/FooterApp'
 
   export default {
     name: 'App',
     components: {
-      // HeaderApp,
-      // FooterApp
+      HeaderApp
     },
     data(){
       return{}

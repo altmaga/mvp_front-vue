@@ -1,17 +1,17 @@
 <template>
-  <div class="organization-card">
-    <router-link :to="{ name: 'organizationShow', params: { id: organization._id } }">
-      <div class="organization-card_name">
-        <div
-          class="container-fluid"
-        >
-          <div class="row">
-            <h3>{{organization.legalName}}</h3>
-            <ul v-for="category in organization.categories" :key="category._id">
-              <li>{{category.name}}</li>
-              <li>{{category.desc}}</li>
-            </ul>
+  <div>
+    <router-link :to="{ name: 'organizationShow', params: { id: organization._id } }" class="organization-card">
+      <div class="organization-card_bg" style="background-image: url('https://via.placeholder.com/350x150')">
+      </div>
+      <div class="organization-card_content">
+        <div class="top">
+          <h3>{{organization.legalName}}</h3>
+          <div v-for="category in organization.categories" :key="category._id" class="organization-card_list-category">
+            <p>{{category.name}}</p>
           </div>
+        </div>
+        <div class="address">
+          <p>{{organization.address}}</p>
         </div>
       </div>
     </router-link>

@@ -2,6 +2,13 @@
   <div class="container organization-container">
     <div v-if="organization" class="organization">
       <h3>{{organization.legalName}}</h3>
+      <p>{{organization.address}}</p>
+      <p>{{organization.delivery}}</p>
+      <p>{{organization.hours}}</p>
+      <p>{{organization.phone}}</p>
+      <p>{{organization.fb}}</p>
+      <p>{{organization.insta}}</p>
+
       <ProductCard
         class="product-item col-6 col-lg-4"
         v-for="product in organization.products"
@@ -40,3 +47,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+  .organization-card {
+
+  }
+</style>

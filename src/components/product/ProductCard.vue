@@ -1,6 +1,8 @@
 <template>
   <div class="">
     <div class="product-card">
+      <div class="product-card_bg" style="background-image: url('https://via.placeholder.com/350x150')">
+      </div>
         <div class="product-card_name">
           <div
             class="container-fluid"

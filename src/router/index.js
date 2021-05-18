@@ -45,6 +45,11 @@ Router definitions
             component: () => import('../views/Register.vue')
         },
         {
+            path: '/profile',
+            name: 'profileShow',
+            component: () => import('../views/profile/Show.vue')
+        },
+        {
             // Catch undefined views
             path: '*',
             name: 'NotFound',

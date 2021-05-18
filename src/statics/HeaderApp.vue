@@ -1,9 +1,16 @@
 <template>
-  <header class="container">
+  <header class="container header">
       <nav class="row">
           <div class="col-12">
-            <router-link to="/" class="button"><i class="fas fa-list"></i></router-link>
-            <button v-if="isAuth" type="button" class="button" v-on:click="logoutUser"><i class="fas fa-sign-out-alt"></i></button>
+              <div class="header-item">
+                <div class="logo">
+                    <img src="@/assets/img/logo_header.svg" alt="" />
+                </div>
+                <div class="actions">
+                    <button v-if="isAuth" type="button" class="button" v-on:click="logoutUser"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                    <button><i class="fa fa-bars" aria-hidden="true"></i></button>
+                </div>
+              </div>
           </div>
       </nav>
   </header>
