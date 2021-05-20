@@ -1,18 +1,10 @@
 <template>
-  <div class="">
-    <div class="category-card">
-      <router-link :to="{ name: 'categoryShow', params: { id: category._id } }">
-        <div class="category-card_name">
-          <div
-            class="container-fluid"
-          >
-            <div class="row">
-              <h3>{{category.name}}</h3>
-            </div>
-          </div>
-        </div>
-      </router-link>
-    </div>
+  <div>
+    <router-link :to="{ name: 'categoryShow', params: { id: category._id } }" class="category-card">
+      <div class="category-card_name">
+        <h3>{{category.name}}</h3>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -25,3 +17,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.category-card {
+  display: inline-block;
+  padding: 20px;
+}
+</style>

@@ -1,16 +1,18 @@
 <template>
   <section>
+    <HeaderApp/>
     <div class="container">
       <div class="row">
         <div class="category-title general-title col-12">
           <h2>Les catégories</h2>
         </div>
+        <div class="col-12">
           <CategoryCard
-            class="category-item col-12"
             v-for="category in allCategory"
             :key="category._id"
             :category="category"
           />
+        </div>
       </div>
       <div class="row">
         <div class="organization-title general-title col-12">
@@ -30,6 +32,7 @@
 
 <script>
 
+  import HeaderApp from '@/statics/HeaderApp'
   import { mapState, mapActions } from "vuex";
   import OrganizationCard from "@/components/organization/OrganizationCard";
   import CategoryCard from "@/components/category/CategoryCard";
@@ -37,6 +40,7 @@
   export default {
     name: "Feed",
     components: {
+      HeaderApp,
       OrganizationCard,
       CategoryCard
     },

@@ -6,9 +6,24 @@
                 <div class="logo">
                     <img src="@/assets/img/logo_header.svg" alt="" />
                 </div>
+                <div class="menu"
+                    :class="{ 'active' : isBurgerActive }"
+                    >
+                    <button class="close" @click.prevent="closeMenu"><i class="fa fa-window-close"></i></button>
+                    <div class="menu_list">
+                        <p class="menu_list-item">Feed</p>
+                        <p class="menu_list-item">Feed</p>
+                        <p class="menu_list-item">Feed</p>
+                        <p class="menu_list-item">Feed</p>
+                    </div>
+                </div>
                 <div class="actions">
-                    <button v-if="isAuth" type="button" class="button" v-on:click="logoutUser"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
-                    <button><i class="fa fa-bars" aria-hidden="true"></i></button>
+                    <!-- <button v-if="isAuth" type="button" class="button" v-on:click="logoutUser"><i class="fa fa-user" aria-hidden="true"></i></button> -->
+                    <button class="actions-menu" @click.prevent="openMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
               </div>
           </div>
@@ -23,12 +38,20 @@
         data(){
             return {
                 isAuth: this.$store.getters.isAuthenticated,
-                subTitle: undefined
+                subTitle: undefined,
+                isBurgerActive: false
             }
         },
         methods: {
             // Method to logout user with store action
-            logoutUser(){ this.$store.dispatch('logoutUser') }
+            logoutUser(){ this.$store.dispatch('logoutUser') },
+
+            openMenu(){
+                this.isBurgerActive = true
+            },
+            closeMenu(){
+                this.isBurgerActive = false
+            }
         },
 
         watch:{
@@ -73,4 +96,66 @@
 </script>
 
 <style lang="scss">
+    .header {
+        position: relative;
+
+        &-item {
+            .menu {
+                position: absolute;
+                top: 0;
+                right: -100vw;
+                height: 100vh;
+                width: 100vw;
+                background-color: $flashpurple;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+                &.active {
+                    right: 0;
+                    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                }
+
+                .close {
+                    background-color: inherit;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+
+                    i {
+                        color: $white;
+                    }
+                }
+
+                &_list {
+                    &-item {
+                        color: $white;
+                        margin: 20px 0;
+                    }
+                }
+            }
+
+            .actions {
+                &-menu {
+                    span {
+                        width: 20px;
+                        height: 2px;
+                        display: block;
+                        background-color: $flashpurple;
+                        border-radius: 5px;
+
+                        &:first-child {
+                            margin-bottom: 5px;
+                        }
+
+                        &:last-child {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>
