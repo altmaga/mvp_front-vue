@@ -22,5 +22,23 @@ export default {
 .category-card {
   display: inline-block;
   padding: 20px;
+  text-decoration: none;
+  color: $white;
+  border-radius: 12px;
+
+  &_name {
+    h3 {
+      font-weight: $bold;
+      margin-bottom: 0;
+    }
+  }
+
+  &:nth-child(odd){
+    background: $gradient-1;
+  }
+
+  &:nth-child(even){
+    background: $gradient-2;
+  }
 }
 </style>

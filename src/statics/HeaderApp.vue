@@ -98,6 +98,7 @@
 <style lang="scss">
     .header {
         position: relative;
+        padding-bottom: 30px;
 
         &-item {
             .menu {

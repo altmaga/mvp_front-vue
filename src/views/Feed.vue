@@ -3,10 +3,10 @@
     <HeaderApp/>
     <div class="container">
       <div class="row">
-        <div class="category-title general-title col-12">
-          <h2>Les catégories</h2>
-        </div>
-        <div class="col-12">
+        <div class="col-12 feed-category">
+          <div class="category-title general-title">
+            <h2>Les catégories</h2>
+          </div>
           <CategoryCard
             v-for="category in allCategory"
             :key="category._id"
@@ -15,10 +15,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="organization-title general-title col-12">
-          <h2>Les boutiques</h2>
-        </div>
-        <div class="col-12">
+        <div class="col-12 feed-organization">
+          <div class="organization-title general-title">
+            <h2>Les boutiques</h2>
+          </div>
           <OrganizationCard
             v-for="organization in allOrganization"
             :key="organization._id"

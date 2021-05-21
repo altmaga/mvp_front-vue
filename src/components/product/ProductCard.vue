@@ -1,9 +1,10 @@
 <template>
-    <div class="product_card">
-      <div class="product_card-img" v-if="product.img">
-        <img v-bind:src="`${product.img}`">
+    <div class="product-card">
+      <div class="product-card_img" v-if="product.img">
+        <!-- <img v-bind:src="`${product.img}`"> -->
+        <div class="img" :style="{backgroundImage:`url(${product.img})`}"></div>
       </div>
-      <div class="product_card-name">
+      <div class="product-card_content">
         <p>{{ product.name }}</p>
         <p>{{ product.desc }}</p>
       </div>
@@ -19,3 +20,26 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.product-card {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  margin-bottom: 12px;
+
+  &_img {
+    .img {
+      margin-right: 15px;
+      width: 150px;
+      height: 110px;
+      background-size: cover;
+      border-radius: 12px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+  &_content {
+
+  }
+}
+</style>
