@@ -24,8 +24,7 @@ export default {
 .product-card {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 28px;
 
   &_img {
     .img {

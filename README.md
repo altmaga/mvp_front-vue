@@ -5,13 +5,9 @@ Ce répertoire à été réalisé dans le cadre d'une formation aux techniques s
 ```bach
 # VIA NPM
 npm install -g @vue/cli
-
-# VIA YARN
-yarn global add @vue/cli
 ````
 
 ## Utilisation de ce répertoire
-
 ### Installation des modules
 
 Le projet développé dans ce répertoire utilise différents modules que vous devez au préalable installer en tapant la commande suivante à la racine du répertoire :

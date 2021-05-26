@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 .category-card {
   display: inline-block;
-  padding: 20px;
+  padding: 20px 40px;
   text-decoration: none;
   color: $white;
   border-radius: 12px;

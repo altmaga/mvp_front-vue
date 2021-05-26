@@ -15,6 +15,9 @@
                         <p class="menu_list-item">Feed</p>
                         <p class="menu_list-item">Feed</p>
                         <p class="menu_list-item">Feed</p>
+                        <router-link :to="{ name: 'profileShow'}" class="menu_list-item">
+                            Account
+                        </router-link>
                     </div>
                 </div>
                 <div class="actions">
@@ -102,21 +105,22 @@
 
         &-item {
             .menu {
-                position: absolute;
+                position: fixed;
                 top: 0;
-                right: -100vw;
-                height: 100vh;
+                z-index: 10;
                 width: 100vw;
+                height: 100vh;
+                right: -100vh;
                 background-color: $flashpurple;
                 z-index: 2;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
 
                 &.active {
                     right: 0;
-                    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
                 }
 
                 .close {

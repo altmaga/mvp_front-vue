@@ -301,6 +301,12 @@ export default {
       }
     }
     }
+
+    .products {
+      .product_list {
+        margin-bottom: 50px;
+      }
+    }
   }
 }
 </style>

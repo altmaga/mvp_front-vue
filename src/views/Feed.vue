@@ -69,3 +69,9 @@
     destroyed(){}
   };
 </script>
+
+<style lang="scss">
+  .feed-category, .feed-organization {
+    margin-bottom: 50px;
+  }
+</style>
