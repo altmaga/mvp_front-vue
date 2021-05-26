@@ -11,17 +11,19 @@
                     >
                     <button class="close" @click.prevent="closeMenu"><i class="fa fa-window-close"></i></button>
                     <div class="menu_list">
-                        <p class="menu_list-item">Feed</p>
-                        <p class="menu_list-item">Feed</p>
-                        <p class="menu_list-item">Feed</p>
-                        <p class="menu_list-item">Feed</p>
-                        <router-link :to="{ name: 'profileShow'}" class="menu_list-item">
-                            Account
-                        </router-link>
+                        <p class="menu_list-item">Fil d'actualité</p>
+                        <p class="menu_list-item">Map [Bientôt disponible]</p>
+                        <p class="menu_list-item">
+                            <router-link :to="{ name: 'profileShow'}" class="menu_list-item">
+                                Mon compte
+                            </router-link>
+                        </p>
+                        <p class="menu_list-item">
+                            <button v-if="isAuth" type="button" class="button" v-on:click="logoutUser">Se déconnecter</button>
+                        </p>
                     </div>
                 </div>
                 <div class="actions">
-                    <!-- <button v-if="isAuth" type="button" class="button" v-on:click="logoutUser"><i class="fa fa-user" aria-hidden="true"></i></button> -->
                     <button class="actions-menu" @click.prevent="openMenu">
                         <span></span>
                         <span></span>
@@ -138,6 +140,16 @@
                     &-item {
                         color: $white;
                         margin: 20px 0;
+                    }
+                }
+            }
+
+            .menu_list {
+                &-item {
+                    text-align: center;
+
+                    .button {
+                        background-color: $flashpurple;
                     }
                 }
             }

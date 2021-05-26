@@ -7,11 +7,13 @@
           <div class="category-title general-title">
             <h2>Les catégories</h2>
           </div>
-          <CategoryCard
-            v-for="category in allCategory"
-            :key="category._id"
-            :category="category"
-          />
+          <div class="category-list">
+            <CategoryCard
+              v-for="category in allCategory"
+              :key="category._id"
+              :category="category"
+            />
+          </div>
         </div>
       </div>
       <div class="row">
@@ -73,5 +75,18 @@
 <style lang="scss">
   .feed-category, .feed-organization {
     margin-bottom: 50px;
+  }
+
+  .feed-category {
+    .category-list {
+      display: flex;
+      align-items: center;
+      overflow-x: scroll;
+
+      > div {
+        margin-right: 15px;
+        flex: 0 0 auto;
+      }
+    }
   }
 </style>
