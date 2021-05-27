@@ -1,42 +1,44 @@
 <template>
-  <div class="container profile-container">
-    ACCOUNT
-    <!-- {{ user.givenName }} -->
+  <div class="profile_detail">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="back" @click="$router.go(-1)">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </div>
+          {{ userInfo.givenName }}
+          {{ userInfo.familyName }}
+          {{ userInfo.email }}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "profileShow",
   components: {},
   data() {
     return {
-      isAuth: this.$store.getters.isAuthenticated,
     };
   },
   methods: {
-      // Method to logout user with store action
-      // logoutUser(){ this.$store.dispatch('logoutUser') }
-    checkDataUser() {
-      this.$store.dispatch('checkUser');
-    },
-  },
-  created(){
-    // Subscribe to store mutations
-    this.$store.subscribe((mutations) => {
-        // Check mutations
-        if( mutations.type === "USER" ){
-            // Set Auth navigation
-            this.isAuth = this.$store.getters.isAuthenticated;
-
-            // Redirect user when connected
-            this.$router.push('/login').catch( () => {} )
-        }
+    ...mapActions({
+      fetchOneUserInfo: "user/fetchOneUserInfo",
     })
   },
+  computed: {
+    ...mapState(
+      {
+        userInfo: (state) => state.user.userInfo,
+      }
+    ),
+  },
   mounted() {
-    this.checkDataUser();
+    this.fetchOneUserInfo()
   }
 };
 </script>

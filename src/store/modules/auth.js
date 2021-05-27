@@ -20,7 +20,7 @@ export default {
     actions: {
         // [AUTH] Method to get user data from JWT
         checkUser(context){
-            fetch( `${apiUrlAuth}me`, { method: `GET`, credentials: `include`}) //=> Fetch API
+            fetch( `${apiUrlAuth}me`, { method: `GET`, credentials: `include`, headers: {'Content-type' : 'application/json'}, withCredentials: true}) //=> Fetch API
             .then( response => !response.ok ? console.log(response) : response.json(response)) //=> Check response
             .then(  async apiResponse => await context.commit(`USER`, { data: apiResponse })) //=> Commit changes
             .catch( apiError => console.log(apiError)) //=> Catch error

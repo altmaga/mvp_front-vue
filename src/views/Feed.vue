@@ -51,15 +51,17 @@
       }
     },
     computed: {
-      ...mapState({
-        allOrganization: (state) => state.organization.allOrganization,
-        allCategory: (state) => state.category.allCategory,
-      })
+      ...mapState(
+        {
+          allOrganization: (state) => state.organization.allOrganization,
+          allCategory: (state) => state.category.allCategory
+        }
+      ),
     },
     methods: {
       ...mapActions({
         fetchAllOrganization: "organization/fetchAllOrganization",
-        fetchAllCategory: "category/fetchAllCategory",
+        fetchAllCategory: "category/fetchAllCategory"
       })
     },
 

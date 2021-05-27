@@ -19,7 +19,6 @@ const mutations = {
 const actions = {
   async fetchAllOrganization({ commit }){
     const data = await axios.get(`${apiUrl}organization`);
-    console.log(data.data.data);
     commit("setAllOrganization", data.data.data);
   },
   async fetchOneOrganization({ commit }, id){

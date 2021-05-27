@@ -43,7 +43,6 @@
         data(){
             return {
                 isAuth: this.$store.getters.isAuthenticated,
-                subTitle: undefined,
                 isBurgerActive: false
             }
         },
@@ -59,42 +58,7 @@
             }
         },
 
-        watch:{
-            // Watch route value changes to display the header sub-title
-            $route(to, from){
-                // Switch route name
-                switch(to.name){
-                    case 'NotFound':
-                        this.subTitle = 'Page introuvable'
-                    break;
-
-                    case 'Feed':
-                        this.subTitle = `Page d'accueil : privée`
-                    break;
-
-                    case 'Login':
-                        this.subTitle = `Page login : public`
-                    break;
-
-                    default:
-                        this.subTitle = undefined
-                    break;
-                }
-            }
-        },
-
         created(){
-            // Subscribe to store mutations
-            this.$store.subscribe((mutations) => {
-                // Check mutations
-                if( mutations.type === "USER" ){
-                    // Set Auth navigation
-                    this.isAuth = this.$store.getters.isAuthenticated;
-
-                    // Redirect user when connected
-                    this.$router.push('/login').catch( () => {} )
-                }
-            })
         },
         mounted(){ }
     }
