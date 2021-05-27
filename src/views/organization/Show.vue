@@ -20,9 +20,9 @@
               <div v-for="category in organization.categories" :key="category._id" class="organization-card_list-category">
                 <p>{{category.name}}</p>
               </div>
-              <div class="nb_favoris">
+              <div class="nb_favoris" v-if="organization.likes.length > 0">
                 <i class="fa fa-heart" aria-hidden="true"></i>
-                <span>4</span>
+                <span>{{organization.likes.length}}</span>
               </div>
             </div>
             <div class="address">
