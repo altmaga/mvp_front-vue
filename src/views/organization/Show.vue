@@ -132,6 +132,7 @@ export default {
       font-size: 26px;
       color: $white;
       z-index: 2;
+      width: auto;
     }
 
     .overlay {

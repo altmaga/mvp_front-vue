@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <router-link :to="{ name: 'categoryShow', params: { id: category._id } }" class="category-card">
-      <div class="category-card_name">
-        <h3>{{category.name}}</h3>
-      </div>
-    </router-link>
-  </div>
+  <router-link :to="{ name: 'categoryShow', params: { id: category._id } }" class="category-card">
+    <div class="category-card_name">
+      <h3>{{category.name}}</h3>
+    </div>
+  </router-link>
 </template>
 
 <script>

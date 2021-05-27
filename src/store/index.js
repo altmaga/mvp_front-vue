@@ -11,6 +11,7 @@ Imports and config
     import organization from "./modules/organization";
     import category from "./modules/category";
     import user from "./modules/user";
+    import like from "./modules/user";
 
     // Set up Vuex
     Vue.use(Vuex);
@@ -26,7 +27,8 @@ Export store
             auth,
             organization,
             category,
-            user
+            user,
+            like
         },
         plugins: [
             createPersistedState()

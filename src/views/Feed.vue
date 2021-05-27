@@ -85,7 +85,7 @@
       align-items: center;
       overflow-x: scroll;
 
-      > div {
+      > .category-card {
         margin-right: 15px;
         flex: 0 0 auto;
       }

@@ -9,10 +9,10 @@
                 <div class="menu"
                     :class="{ 'active' : isBurgerActive }"
                     >
-                    <button class="close" @click.prevent="closeMenu"><i class="fa fa-window-close"></i></button>
+                    <button class="close" @click.prevent="closeMenu"><i class="fa fa-times" aria-hidden="true"></i></button>
                     <div class="menu_list">
                         <p class="menu_list-item">Fil d'actualité</p>
-                        <p class="menu_list-item">Map [Bientôt disponible]</p>
+                        <!-- <p class="menu_list-item">Map [Bientôt disponible]</p> -->
                         <p class="menu_list-item">
                             <router-link :to="{ name: 'profileShow'}" class="menu_list-item">
                                 Mon compte
@@ -114,6 +114,7 @@
 
                     .button {
                         background-color: $flashpurple;
+                        color: $white;
                     }
                 }
             }

@@ -84,11 +84,12 @@ export default {
         font-size: 26px;
         color: $purple;
         z-index: 2;
+        width: auto;
       }
     }
 
     &-content {
-      padding-top: 20px;
+      padding-top: 50px;
     }
   }
 </style>
