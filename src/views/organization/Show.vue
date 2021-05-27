@@ -7,8 +7,8 @@
       <div class="overlay"></div>
       <ul class="socials">
         <li><a v-bind:href="`tel:${organization.phone}`" class="socials-item"><i class="fa fa-phone" aria-hidden="true"></i>{{organization.phone}}</a></li>
-        <li><a v-bind:href="`${organization.fb}`" class="socials-item"><i class="fa fa-facebook" aria-hidden="true"></i></a>{{organization.fb}}</li>
-        <li><a v-bind:href="`${organization.insta}`" class="socials-item"><i class="fa fa-instagram" aria-hidden="true"></i></a>{{organization.insta}}</li>
+        <li v-if="organization.fb"><a v-bind:href="`${organization.fb}`" class="socials-item"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li v-if="organization.insta"><a v-bind:href="`${organization.insta}`" class="socials-item"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
       </ul>
     </div>
     <div class="container organization_detail-content">

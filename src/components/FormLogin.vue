@@ -20,7 +20,7 @@
 
     data(){
       return {
-       loginEmail: 'alice@organization.io',
+       loginEmail: 'alice@user.fr',
        loginPassword: 'alice85'
       }
     },
