@@ -29,8 +29,8 @@
 
     data(){
       return {
-       loginEmail: 'Email',
-       loginPassword: 'Mot de passe',
+       loginEmail: 'test@user.io',
+       loginPassword: 'alice85',
         cssProps: {
           backgroundImage: `url(${require('@/assets/img/bg_form.png')})`
         }
